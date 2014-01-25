@@ -20,7 +20,7 @@ interested in (e.g. requests, db queries etc). The counter must only be incremen
 		
 Create a few metrics
 
-    	final List<SimpleMetric> simpleMetrics = new ArrayList<SimpleMetric>();
+	final List<SimpleMetric> simpleMetrics = new ArrayList<SimpleMetric>();
 
 	simpleMetrics.add(new SimpleMetric(10, TimeUnit.SECONDS, 500, TimeUnit.MILLISECONDS, getCount));
 	simpleMetrics.add(new SimpleMetric(1, TimeUnit.MINUTES, 1, TimeUnit.SECONDS, getCount));
