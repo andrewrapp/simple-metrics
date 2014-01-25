@@ -22,12 +22,12 @@ Create a few metrics
 
 	final List<SimpleMetric> simpleMetrics = new ArrayList<SimpleMetric>();
 
+	// tracks count in last 10 seconds, updated every 500 milliseconds
 	simpleMetrics.add(new SimpleMetric(10, TimeUnit.SECONDS, 500, TimeUnit.MILLISECONDS, getCount));
+	// track count in last minute, updated every second
 	simpleMetrics.add(new SimpleMetric(1, TimeUnit.MINUTES, 1, TimeUnit.SECONDS, getCount));
-	simpleMetrics.add(new SimpleMetric(5, TimeUnit.MINUTES, 5, TimeUnit.SECONDS, getCount));
-	simpleMetrics.add(new SimpleMetric(30, TimeUnit.MINUTES, 30, TimeUnit.SECONDS, getCount));
+	// tracks count in last hour, updated every 90 seconds
 	simpleMetrics.add(new SimpleMetric(1, TimeUnit.HOURS, 90, TimeUnit.SECONDS, getCount));
-	simpleMetrics.add(new SimpleMetric(7, TimeUnit.DAYS, 1, TimeUnit.HOURS, getCount));
 	
 Start the scheduler
 
