@@ -8,6 +8,7 @@ Usage:
 Create a counter and provide access to it via GetCount interface. Increment the counter to track whatever your
 interested in (e.g. requests, db queries etc). The counter must only be incremented over time and never decremented.
 
+```java
 	final AtomicLong counter = new AtomicLong();
 
 	final SimpleMetric.GetCount getCount = new GetCount() {
@@ -16,10 +17,11 @@ interested in (e.g. requests, db queries etc). The counter must only be incremen
 			return counter.get();
 		}
 	};
-		
+```		
 		
 Create a few metrics
 
+```java
 	final List<SimpleMetric> simpleMetrics = new ArrayList<SimpleMetric>();
 
 	// tracks count in last 10 seconds, updated every 500 milliseconds
@@ -28,18 +30,21 @@ Create a few metrics
 	simpleMetrics.add(new SimpleMetric(1, TimeUnit.MINUTES, 1, TimeUnit.SECONDS, getCount));
 	// tracks count in last hour, updated every 90 seconds
 	simpleMetrics.add(new SimpleMetric(1, TimeUnit.HOURS, 90, TimeUnit.SECONDS, getCount));
-	
+```
+
 Start the scheduler
 
+```java
 	new MetricsScheduler(simpleMetrics);
-		
+```		
 		
 Now print metrics
 
+```java
 	for (SimpleMetric simpleMetric : simpleMetrics) {    				
 		System.out.println("There have been " + simpleMetric.getWindowCount() + " hits in the last " + simpleMetric.getWindow() + " " + simpleMetric.getWindowUnit() + ". This metric is updated every " + simpleMetric.getUpdateFrequency() + " " + simpleMetric.getUpdateFrequencyUnit());
 	}
-	
+```	
 	
 	
 I've included a demo (MetricsServer.java) that starts an embedded Jetty server. Increase the counter with http://localhost:8090/hit and view metrics with http://localhost:8090/metrics
