@@ -1,7 +1,7 @@
 simple-metrics
 ==============
 
-Computes how many n (e.g. hits) in the last time window y, updated every z time unit
+Computes how many times a counter was incremented in the last time window y, updated every z time unit
 
 Usage:
 
