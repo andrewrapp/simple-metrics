@@ -38,7 +38,7 @@ Start the scheduler
 	new MetricsScheduler(simpleMetrics);
 ```		
 		
-Now print metrics
+Print some metrics
 
 ```java
 	for (SimpleMetric simpleMetric : simpleMetrics) {    				
@@ -47,7 +47,7 @@ Now print metrics
 ```	
 	
 	
-I've included a demo (MetricsServer.java) that starts an embedded Jetty server. Increase the counter with http://localhost:8090/hit and view metrics with http://localhost:8090/metrics
+I've included a demo (MetricsServer.java) that starts an embedded Jetty server. Increment the counter with http://localhost:8090/hit and view metrics with http://localhost:8090/metrics
 
 Sample output:
 
