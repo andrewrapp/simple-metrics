@@ -57,6 +57,6 @@ There have been 13 hits in the last 1 MINUTES. This metric is updated every 1 SE
 
 Metric window is not full yet. Metric window is 5 MINUTES, updated every 5 SECONDS, It is 25.0% full, current count is 16
 
-Each metric is represented as a array  with size equal to window / update frequency (e.g. if 5 minute window with 1s frequency, size is 300). Of course as the window increases and update frequency descreases, more memory will be consumed. The array is full after the window time has elapsed, however until then the count is available but it is not scaled/extrapolated. The count is first available when there are two data points, so if the update frequency is 90 seconds, then in 90 seconds the first count window is available, although incomplete. 
+Each metric is represented as a array  with size equal to window / update frequency (e.g. if 5 minute window with 1s frequency, size is 300). Of course as the window increases and update frequency decreases, more memory will be consumed, so choose accordingly.
 
 This was purely a programming exercise, there are no tests, use accordingly
